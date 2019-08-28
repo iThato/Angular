@@ -1,0 +1,12 @@
+<div class="game">
+  <div #board class="board" [class.over]="state.goal" [class.show-tiles]="showNumbers">
+    <div class="tile animated" *ngFor="let tile of state.tiles" [ngStyle]="getStyles(tile)" (click)="moveTile(tile)">
+      <span style="color: black">{{tile.goal.index}}</span>
+    </div>
+    <div #background class="background" [style.backgroundImage]="'url('+state.image+')'"></div>
+  </div>
+  <label><input type="checkbox" [(ngModel)]="showNumbers">Show numbers</label>
+  <h2>Next level: Go to the first floor and find find the resembling mascot</h2>
+</div>
+
+
